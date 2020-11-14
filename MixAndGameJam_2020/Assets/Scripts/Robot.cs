@@ -5,11 +5,12 @@ using UnityEngine;
 public class Robot : MonoBehaviour
 {
     public enum UpgradeType { Motor, Spring, HidraulicBomb, Deposit, Propeller}
+    private readonly float STATSCALE = 5;
 
     public List<Upgrade> inventory;
     public HookController hook;
     public PlayerInputs inputs;
-
+   
     [Header("Base Stats")]
     public float bSpeed;
     public float bLoadTime;
@@ -23,7 +24,6 @@ public class Robot : MonoBehaviour
     public float launchForce;
     public float maxFuel;
     public float dashForce;
-
     public void Start()
     {
         inputs = GetComponent<PlayerInputs>();
@@ -44,10 +44,6 @@ public class Robot : MonoBehaviour
             inventory.Add(upgrade);
             UpdateStat(upgrade.type);
         }
-        foreach (Upgrade u in inventory)
-        {
-            print(u.ToString());
-        }
     }
 
     public void RemoveUpgrade(Upgrade upgrade)
@@ -55,7 +51,6 @@ public class Robot : MonoBehaviour
         inventory.Remove(upgrade);
         UpdateStat(upgrade.type);
     }
-
     public Upgrade StealUpgrade()
     {
         Upgrade toSteal = inventory[Random.Range(0, inventory.Count)];
@@ -72,21 +67,20 @@ public class Robot : MonoBehaviour
         UpdateStat(UpgradeType.Deposit);
         UpdateStat(UpgradeType.Propeller);
     }
-
     public void UpdateStat(UpgradeType type)
     {
-        int totalValue = 0;
+        float totalValue = 0;
         foreach(Upgrade u in inventory)
         {
             if(u.type == type)
             {
-                totalValue += u.value;
+                totalValue += u.value * STATSCALE;
             }
         }
         switch (type)
         {
             case UpgradeType.Motor:
-                speed = bSpeed * (1+ totalValue/100f);
+                speed = bSpeed * (1+ totalValue/50f);
                 break;
             case UpgradeType.Spring:
                 loadTime = bLoadTime * (1 - totalValue / 100f);

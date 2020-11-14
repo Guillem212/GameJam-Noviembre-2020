@@ -9,11 +9,28 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Robot enemy = other.GetComponent<Robot>();
-        if (enemy && enemy!=robot)
+        Robot r = other.GetComponent<Robot>();
+        if (r)
         {
-            upgrade = enemy.StealUpgrade();
-            robot.hook.Return();
+            if (r == robot)
+            {
+                if (!robot.hook.cable.enabled)
+                {
+                    r.hook.PickUp();
+                }
+            }
+            else if(r!=robot)
+            {
+                if (robot.hook.cable.enabled)
+                {
+                    upgrade = r.StealUpgrade();
+                    robot.hook.Return();
+                }
+                else
+                {
+                    r.AddUpgrade(upgrade);
+                }
+            }
         }
     }
 
