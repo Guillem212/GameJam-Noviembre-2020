@@ -24,7 +24,6 @@ public class Robot : MonoBehaviour
     public float launchForce;
     public float maxFuel;
     public float dashForce;
-
     public void Start()
     {
         inputs = GetComponent<PlayerInputs>();
@@ -52,7 +51,6 @@ public class Robot : MonoBehaviour
         inventory.Remove(upgrade);
         UpdateStat(upgrade.type);
     }
-
     public Upgrade StealUpgrade()
     {
         Upgrade toSteal = inventory[Random.Range(0, inventory.Count)];
@@ -69,7 +67,6 @@ public class Robot : MonoBehaviour
         UpdateStat(UpgradeType.Deposit);
         UpdateStat(UpgradeType.Propeller);
     }
-
     public void UpdateStat(UpgradeType type)
     {
         float totalValue = 0;

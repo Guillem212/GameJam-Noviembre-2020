@@ -9,12 +9,14 @@ public class PlayerInputs : MonoBehaviour
     private PlayerMovement m_PlayerMovement;
     public Vector2 m_LeftStick;
     public Vector2 m_RightStick;
+    private CardPlayer m_CardPlayer;
 
     public Robot robot;
 
     private void Start()
     {
         robot = GetComponent<Robot>();
+         m_CardPlayer = GetComponent<CardPlayer>();
         m_PlayerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -46,35 +48,37 @@ public class PlayerInputs : MonoBehaviour
     //---------------------------------------------------------
     public void OnSelectCard(InputValue value)
     {
+        m_CardPlayer.f_ChooseCard(value.Get<Vector2>().x);
     }
 
-    public void OnAttack(InputValue value)
+    public void OnAttack(InputValue value) 
     {
-
+        m_CardPlayer.f_ChoosActionOfCard(CardAction.attack);
     }
 
     public void OnSteal(InputValue value)
     {
-
+        m_CardPlayer.f_ChoosActionOfCard(CardAction.steal);
     }
     public void OnDefend(InputValue value)
     {
-
+        m_CardPlayer.f_ChoosActionOfCard(CardAction.defense);
     }
     public void OnAttackPlayerX(InputValue value)
     {
-
+        m_CardPlayer.f_ChooseEnemie(0);
     }
     public void OnAttackPlayerY(InputValue value)
     {
-
+        m_CardPlayer.f_ChooseEnemie(1);
     }
     public void OnAttackPlayerB(InputValue value)
     {
-
+        m_CardPlayer.f_ChooseEnemie(2);
     }
     public void OnAttackPlayerA(InputValue value)
     {
+        m_CardPlayer.f_ChooseEnemie(3);
 
     }
 
