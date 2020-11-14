@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     /// <summary>
-    /// Velocity of the player.
+    /// Velocity of the player in a range of 0 to 20.
     /// </summary>
     [Range(1, 20)] public float m_PlayerVelocity;
 

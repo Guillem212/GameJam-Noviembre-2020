@@ -468,6 +468,10 @@ PrefabInstance:
       value: InputManager
       objectReference: {fileID: 0}
     - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
+      propertyPath: m_SplitScreen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
       propertyPath: m_JoinBehavior
       value: 1
       objectReference: {fileID: 0}
@@ -475,5 +479,13 @@ PrefabInstance:
       propertyPath: m_PlayerPrefab
       value: 
       objectReference: {fileID: 2159468900015177378, guid: 8e718393c349519449cef041b5d78081, type: 3}
+    - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}

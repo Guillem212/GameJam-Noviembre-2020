@@ -29,7 +29,7 @@ public class PlayerInputs : MonoBehaviour
     //---------------------------------------------------------
     //INPUTS CARD GAME
     //---------------------------------------------------------
-    [HideInInspector] public Vector2 i_SelectCard;
+    [HideInInspector] public float i_SelectCard;
     [HideInInspector] public bool i_Attack;
     [HideInInspector] public bool i_Defend;
     [HideInInspector] public bool i_Steal;
@@ -39,7 +39,7 @@ public class PlayerInputs : MonoBehaviour
     [HideInInspector] public bool i_AttackPlayerA;
     public void OnSelectCard(InputValue value)
     {
-        i_SelectCard = value.Get<Vector2>();
+        i_SelectCard = value.Get<Vector2>().x;
     }
 
     public void OnAttack(InputValue value)
