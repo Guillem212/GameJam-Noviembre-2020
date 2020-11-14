@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerMovement), typeof(CardPlayer))]
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerInputs : MonoBehaviour
 {
-
     private PlayerMovement m_PlayerMovement;
-    private CardPlayer m_CardPlayer;
     public Vector2 m_LeftStick;
     public Vector2 m_RightStick;
+    private CardPlayer m_CardPlayer;
+
+    public Robot robot;
 
     private void Start()
     {
-        m_CardPlayer = GetComponent<CardPlayer>();
+        robot = GetComponent<Robot>();
+         m_CardPlayer = GetComponent<CardPlayer>();
         m_PlayerMovement = GetComponent<PlayerMovement>();
     }
 
     //---------------------------------------------------------
     //INPUTS FIGHT GAME
     //---------------------------------------------------------
-
     public void OnMove(InputValue value)
     {
         m_LeftStick = value.Get<Vector2>();
@@ -29,12 +30,17 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnHookDirection(InputValue value)
     {
-
+        robot.hook.Target(value.Get<Vector2>());
     }
 
-    public void OnHook(InputValue value)
+    public void OnHookLoad(InputValue value)
     {
+        robot.hook.Load();
+    }
 
+    public void OnHookRelease(InputValue value)
+    {
+        robot.hook.Release();
     }
 
     //---------------------------------------------------------
@@ -73,6 +79,7 @@ public class PlayerInputs : MonoBehaviour
     public void OnAttackPlayerA(InputValue value)
     {
         m_CardPlayer.f_ChooseEnemie(3);
+
     }
 
     //---------------------------------------------------------
