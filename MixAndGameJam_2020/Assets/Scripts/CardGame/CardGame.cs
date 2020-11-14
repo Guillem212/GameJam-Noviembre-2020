@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CardGame : MonoBehaviour
 {
-    public enum cardType { attack, defense, steal };
     PlayerInputs playerInputs;
+    GameObject[] players;
     List<Play> m_Plays;
     //List<Play> m_PlaysInPlayerOrder;
 
@@ -13,6 +13,7 @@ public class CardGame : MonoBehaviour
     void Start()
     {
         m_Plays = new List<Play>();
+        players = GameObject.FindGameObjectsWithTag("Player");
         //m_PlaysInPlayerOrder = new List<Play>();
     }
 
@@ -24,55 +25,41 @@ public class CardGame : MonoBehaviour
 
     public void f_Conclusion()
     {
-        foreach (Play playedCardByPlayer in m_Plays)
+        for (int i = 0; i < m_Plays.Count; i++)
         {
-            if(playedCardByPlayer.type == cardType.attack)
+            if (m_Plays[i].action == CardAction.attack)
             {
-               /* if(m_Plays[playedCardByPlayer.chosenPlayer-1].type == cardType.defense)
+                if (m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.defense)
                 {
-                    m_Plays[playedCardByPlayer.chosenPlayer - 1].
-                }*/
-            }
-        }
-    }
-
-    public void AddPlay(Play play)
-    {
-        m_Plays.Add(play);
-        if(m_Plays.Count == 2) //InputManagerSystem.m_InputManagerSystem.m_players.Count
-        {
-            int index = 0;
-            while(m_Plays.Count != 0)
-            {
-                if(m_Plays[index].player == index + 1)
-                {
-                    //m_PlaysInPlayerOrder.Add(m_Plays[index]);
-                    m_Plays.RemoveAt(index);
-                    index = 0;
+                    if (m_Plays[i].value > m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.value)
+                    {
+                        m_Plays[i].win = true;
+                    }
                 }
-                index++;
             }
-            f_Conclusion();
+        }
+        foreach (Play playByPlayer in m_Plays)
+        {
+            if(playByPlayer.action == CardAction.attack)
+            {
+                if(playByPlayer.chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.defense)
+                {
+                    if(playByPlayer.value > playByPlayer.chosenPlayer.GetComponent<CardPlayer>().play.value)
+                    {
+                        playByPlayer.win = true;
+                    }
+                }
+            }
         }
     }
 
-    public struct Play
+    public void AddPlays(Play play)
     {
-        public int player;
-        public int value;
-        public cardType type;
-        public GameObject chosenPlayer;
-        public bool win;
-
-
-        public Play(int player, int value, cardType type, GameObject chosenPlayer, bool win)
+        foreach (GameObject item in players)
         {
-            this.player = player;
-            this.value = value;
-            this.type = type;
-            this.chosenPlayer = chosenPlayer;
-            this.win = win;
+            m_Plays.Add(item.GetComponent<CardPlayer>().play);
         }
+        f_Conclusion();
     }
 }
 
