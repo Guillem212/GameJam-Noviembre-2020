@@ -33,24 +33,56 @@ public class CardGame : MonoBehaviour
                 {
                     if (m_Plays[i].value > m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.value)
                     {
-                        m_Plays[i].win = true;
+                        //m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().
                     }
-                }
-            }
-        }
-        foreach (Play playByPlayer in m_Plays)
-        {
-            if(playByPlayer.action == CardAction.attack)
-            {
-                if(playByPlayer.chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.defense)
-                {
-                    if(playByPlayer.value > playByPlayer.chosenPlayer.GetComponent<CardPlayer>().play.value)
+                    else
                     {
-                        playByPlayer.win = true;
+                        //me rompe la espada
+                    }
+                }
+                if (m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.steal)
+                {
+                        //Le corto el robo y le rompa su carta de robo
+                }
+                if(m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.attack)
+                {
+                    if (m_Plays[i].value > m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.value)
+                    {
+                        //Le rompo la espada
+                    }
+                    else
+                    {
+                        //me rompe la espada
                     }
                 }
             }
         }
+        for (int i = 0; i < m_Plays.Count; i++)
+        {
+            if (m_Plays[i].action == CardAction.steal)
+            {
+                if (m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.defense)
+                {
+                    //le robo
+                }
+                if (m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.steal)
+                {
+                    //le robo
+                }
+                if (m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.action == CardAction.attack)
+                {
+                    if (m_Plays[i].value > m_Plays[i].chosenPlayer.GetComponent<CardPlayer>().play.value)
+                    {
+                        //Le rompo la espada
+                    }
+                    else
+                    {
+                        //me rompe la espada
+                    }
+                }
+            }
+        }
+
     }
 
     public void AddPlays(Play play)

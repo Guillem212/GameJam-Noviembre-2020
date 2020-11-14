@@ -13,9 +13,11 @@ public class CardPlayer : MonoBehaviour
     CardGame m_cardGame;
     GameObject[] players;
     PlayerInput[] playersInputs;
+
 // Start is called before the first frame update
 public void CardGameStart()
     {
+
         m_Deck = GetComponent<Robot>().inventory;
         m_cardGame = GetComponent<CardGame>();
         m_CardIndex = 0;
@@ -77,7 +79,7 @@ public void CardGameStart()
         {
             int r = Random.Range(0, m_Deck.Count);
             m_Deck.RemoveAt(r);
-            play = new Play(gameObject, -1, CardAction.none, null, false);
+            play = new Play(gameObject, -1, CardAction.none, null);
         }
         else
         {
@@ -90,7 +92,7 @@ public void CardGameStart()
                     break;
                 }
             }
-            play = new Play(gameObject, m_Deck[m_CardIndex].value, m_action, enemy, false);
+            play = new Play(gameObject, m_Deck[m_CardIndex].value, m_action, enemy);
         }
     }
 }

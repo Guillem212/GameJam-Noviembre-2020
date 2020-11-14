@@ -9,14 +9,12 @@ public struct Play
     public int value;
     public CardAction action;
     public GameObject chosenPlayer;
-    public bool win;
 
-    public Play(GameObject player, int value, CardAction action, GameObject chosenPlayer, bool win)
+    public Play(GameObject player, int value, CardAction action, GameObject chosenPlayer)
     {
         this.player = player;
         this.value = value;
         this.action = action;
         this.chosenPlayer = chosenPlayer;
-        this.win = win;
     }
 }
