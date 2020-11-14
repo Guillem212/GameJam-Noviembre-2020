@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerInputs : MonoBehaviour
 {
-
     private PlayerMovement m_PlayerMovement;
     public Vector2 m_LeftStick;
     public Vector2 m_RightStick;
 
+    public Robot robot;
+
     private void Start()
     {
+        robot = GetComponent<Robot>();
         m_PlayerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -26,12 +28,17 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnHookDirection(InputValue value)
     {
-
+        robot.hook.Target(value.Get<Vector2>());
     }
 
-    public void OnHook(InputValue value)
+    public void OnHookLoad(InputValue value)
     {
+        robot.hook.Load();
+    }
 
+    public void OnHookRelease(InputValue value)
+    {
+        robot.hook.Release();
     }
 
     //---------------------------------------------------------
