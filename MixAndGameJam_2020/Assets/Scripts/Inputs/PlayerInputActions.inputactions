@@ -87,12 +87,20 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Hook",
+                    "name": "HookLoad",
                     "type": "Button",
                     "id": "0e438d08-6749-41d3-a21f-271f060934a0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "HookRelease",
+                    "type": "Button",
+                    "id": "4cf8ce89-8e2d-41cd-b47d-277c01797741",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 }
             ],
             "bindings": [
@@ -125,7 +133,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hook",
+                    "action": "HookLoad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1c917a3-6bd1-4952-948a-5b9ea601a3c2",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HookRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

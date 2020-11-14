@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Robot : MonoBehaviour
 {
-    public enum UpgradeType { Motor, Magnet, Spring, HidraulicBomb, Deposit, Propeller}
+    public enum UpgradeType { Motor, Spring, HidraulicBomb, Deposit, Propeller}
 
     public List<Upgrade> inventory;
+    public HookController hook;
+    public PlayerInputs inputs;
 
     [Header("Base Stats")]
     public float bSpeed;
-    public float bMagnetism;
     public float bLoadTime;
     public float bLaunchForce;
     public float bMaxFuel;
@@ -18,22 +19,58 @@ public class Robot : MonoBehaviour
 
     [Header("Final Stats")]
     public float speed;
-    public float magnetism;
     public float loadTime;
     public float launchForce;
     public float maxFuel;
     public float dashForce;
 
+    public void Start()
+    {
+        inputs = GetComponent<PlayerInputs>();
+        inventory = new List<Upgrade>();
+        inventory.Add(new Upgrade());
+        inventory.Add(new Upgrade());
+        foreach(Upgrade u in inventory)
+        {
+            print(u.ToString());
+        }
+        UpdateAllStats();
+    }
+
     public void AddUpgrade(Upgrade upgrade)
     {
-        inventory.Add(upgrade);
-        UpdateStat(upgrade.type);
+        if (upgrade!=null)
+        {
+            inventory.Add(upgrade);
+            UpdateStat(upgrade.type);
+        }
+        foreach (Upgrade u in inventory)
+        {
+            print(u.ToString());
+        }
     }
 
     public void RemoveUpgrade(Upgrade upgrade)
     {
         inventory.Remove(upgrade);
         UpdateStat(upgrade.type);
+    }
+
+    public Upgrade StealUpgrade()
+    {
+        Upgrade toSteal = inventory[Random.Range(0, inventory.Count)];
+        RemoveUpgrade(toSteal);
+        return toSteal;
+
+    }
+
+    public void UpdateAllStats()
+    {
+        UpdateStat(UpgradeType.Motor);
+        UpdateStat(UpgradeType.Spring);
+        UpdateStat(UpgradeType.HidraulicBomb);
+        UpdateStat(UpgradeType.Deposit);
+        UpdateStat(UpgradeType.Propeller);
     }
 
     public void UpdateStat(UpgradeType type)
@@ -50,9 +87,6 @@ public class Robot : MonoBehaviour
         {
             case UpgradeType.Motor:
                 speed = bSpeed * (1+ totalValue/100f);
-                break;
-            case UpgradeType.Magnet:
-                magnetism = bMagnetism * (1 + totalValue / 100f);
                 break;
             case UpgradeType.Spring:
                 loadTime = bLoadTime * (1 - totalValue / 100f);
