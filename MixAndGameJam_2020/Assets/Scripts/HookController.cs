@@ -15,11 +15,47 @@ public class HookController : MonoBehaviour
     Robot robot;
     public Hook hook;
     public GameObject arrow;
+    public LineRenderer cable;
 
     public void Start()
     {
         robot = GetComponent<Robot>();
+        cable = GetComponent<LineRenderer>();
         prepared = true;
+    }
+
+    private void Update()
+    {
+        cable.SetPosition(0, transform.position);
+        cable.SetPosition(1, hook.transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, hook.transform.position, out hit))
+        {
+            print("ojo que está tocando");
+            Hook h = hit.transform.GetComponent<Hook>();
+            if (h && h.robot != robot)
+            {
+                Drop();
+            }
+        }
+    }
+
+    public void Drop()
+    {
+        print("DROP");
+        Tween.Stop(hook.GetInstanceID());
+        cable.enabled = false;
+        Vector3 target =  new Vector3(hook.transform.position.x + Random.value, 0, hook.transform.position.y + Random.value);
+        Tween.Position(hook.transform, target, 0.2f, 0);
+    }
+
+    public void PickUp()
+    {
+        cable.enabled = false;
+        prepared = true;
+        robot.AddUpgrade(hook.GetUpgrade());
+        hook.transform.SetParent(transform);
+        hook.transform.localPosition = Vector3.zero;
     }
 
     public void Target(Vector2 dir)
