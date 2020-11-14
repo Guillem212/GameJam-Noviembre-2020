@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159468900015177378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -234,20 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4aaedb69971a443bd6c16c3de20123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_Move: {x: 0, y: 0}
-  i_HookDirection: {x: 0, y: 0}
-  i_HookLaunched: 0
-  i_SelectCard: 0
-  i_Attack: 0
-  i_Defend: 0
-  i_Steal: 0
-  i_AttackPlayerX: 0
-  i_AttackPlayerY: 0
-  i_AttackPlayerB: 0
-  i_AttackPlayerA: 0
-  i_SelectColor: {x: 0, y: 0}
-  i_Accept: 0
-  i_Decline: 0
+  m_LeftStick: {x: 0, y: 0}
+  m_RightStick: {x: 0, y: 0}
 --- !u!114 &7653734346013316189
 MonoBehaviour:
   m_ObjectHideFlags: 0

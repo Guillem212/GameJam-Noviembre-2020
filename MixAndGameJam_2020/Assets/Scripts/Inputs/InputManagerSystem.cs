@@ -21,6 +21,11 @@ public class InputManagerSystem : MonoBehaviour
             m_InputManagerSystem = this;
         }
     }
+
+    private void Start()
+    {
+    }
+
     public void OnPlayerJoined(PlayerInput player)
     {
         m_players.Add(player);
@@ -28,7 +33,7 @@ public class InputManagerSystem : MonoBehaviour
     
     public void OnPlayerLeft(PlayerInput player)
     {
-        m_players.Remove(player);
+        //m_players.Remove(player);
     }
 
     /// <summary>
