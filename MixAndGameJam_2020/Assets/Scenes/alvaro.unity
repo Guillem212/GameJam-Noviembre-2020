@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scenario
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4adf596736b2c18458afa6fac4a85de4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4adf596736b2c18458afa6fac4a85de4, type: 3}
 --- !u!1 &1237997918 stripped
@@ -214,6 +218,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46c3c3c3d680d1645b6d09554d2aa63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1237997922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237997918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec81ef676266e4f9c5443f7187ad6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1496676960
@@ -421,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64eb6fc30cc63864bac59200c9e431ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64eb6fc30cc63864bac59200c9e431ce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -459,6 +475,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8017719401776900093, guid: 64eb6fc30cc63864bac59200c9e431ce, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbc2cf3daeb999a49a51412314e4c9d6, type: 2}
     - target: {fileID: 919132149155446097, guid: 64eb6fc30cc63864bac59200c9e431ce, type: 3}
       propertyPath: m_Name
       value: Robot
