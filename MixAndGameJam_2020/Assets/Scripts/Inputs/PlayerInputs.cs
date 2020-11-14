@@ -41,7 +41,7 @@ public class PlayerInputs : MonoBehaviour
     {
     }
 
-    public void OnAttack(InputValue value)
+    public void OnAttack(InputValue value) 
     {
 
     }
