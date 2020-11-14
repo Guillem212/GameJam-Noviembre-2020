@@ -117,7 +117,19 @@ MonoBehaviour:
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -150,7 +162,19 @@ MonoBehaviour:
     m_ActionId: 7c5e4b87-2f07-4ebb-9f15-a9490d16e692
     m_ActionName: MenuMap/SelectColor[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7653734346013316189}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: movePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fca951ea-19a5-4f90-b2cc-5fd58c574ea3
     m_ActionName: FightGame/Move[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
@@ -213,6 +237,17 @@ MonoBehaviour:
   i_Move: {x: 0, y: 0}
   i_HookDirection: {x: 0, y: 0}
   i_HookLaunched: 0
+  i_SelectCard: 0
+  i_Attack: 0
+  i_Defend: 0
+  i_Steal: 0
+  i_AttackPlayerX: 0
+  i_AttackPlayerY: 0
+  i_AttackPlayerB: 0
+  i_AttackPlayerA: 0
+  i_SelectColor: {x: 0, y: 0}
+  i_Accept: 0
+  i_Decline: 0
 --- !u!114 &7653734346013316189
 MonoBehaviour:
   m_ObjectHideFlags: 0
