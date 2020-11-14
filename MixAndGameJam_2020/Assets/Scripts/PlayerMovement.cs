@@ -30,10 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void movePlayer()
     {
-        m_MoveDirection = new Vector3(m_Inputs.i_Move.x, 0f, m_Inputs.i_Move.y);
+        m_MoveDirection = new Vector3(m_Inputs.m_LeftStick.x, 0f, m_Inputs.m_LeftStick.y);
+        m_MoveDirection = Camera.main.transform.TransformDirection(m_MoveDirection);
+        m_MoveDirection.y = 0.0f;
+        m_MoveDirection.Normalize();
         m_Controller.Move(m_MoveDirection * Time.deltaTime * m_PlayerVelocity);
 
-        if(transform.position.y < 1f || transform.position.y > 1f)
+        if (transform.position.y < 1f || transform.position.y > 1f)
         {
             transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
         }
