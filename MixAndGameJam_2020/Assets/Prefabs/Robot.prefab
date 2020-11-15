@@ -941,7 +941,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d9199426f9d58d64f90431c11b6f9e0f, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: hookRetracting
     clip: {fileID: 8300000, guid: 041994c0c3ddf91448afa3683735d149, type: 3}
