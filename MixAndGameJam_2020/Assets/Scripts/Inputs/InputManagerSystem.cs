@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInputManager))]
 public class InputManagerSystem : MonoBehaviour
 {
-    public List<PlayerInput> m_players;
+    [HideInInspector] public List<PlayerInput> m_players;
+    public Color[] playerColors;
 
     public void OnPlayerJoined(PlayerInput player)
     {
@@ -17,6 +17,8 @@ public class InputManagerSystem : MonoBehaviour
     {
         //m_players.Remove(player);
     }
+
+
 
     /// <summary>
     /// Get the current Action Map of all the players.

@@ -5,18 +5,19 @@ using UnityEngine;
 public class Robot : MonoBehaviour
 {
     public enum UpgradeType { Motor, Spring, HidraulicBomb, Deposit, Propeller}
-    private readonly float STATSCALE = 5;
+    private readonly float STATSCALE = 3;
 
     public List<Upgrade> inventory;
     public HookController hook;
+    public Propeller propeller;
     public PlayerInputs inputs;
    
     [Header("Base Stats")]
-    public float bSpeed;
-    public float bLoadTime;
-    public float bLaunchForce;
-    public float bMaxFuel;
-    public float bDashForce;
+    [Range(0,10)] public float bSpeed;
+    [Range(0, 2)] public float bLoadTime;
+    [Range(0, 2)] public float bLaunchForce;
+    [Range(0, 1)] public float bMaxFuel;
+    [Range(0, 100)] public float bDashForce;
 
     [Header("Final Stats")]
     public float speed;
@@ -80,7 +81,7 @@ public class Robot : MonoBehaviour
         switch (type)
         {
             case UpgradeType.Motor:
-                speed = bSpeed * (1+ totalValue/50f);
+                speed = bSpeed * (1+ totalValue/100f);
                 break;
             case UpgradeType.Spring:
                 loadTime = bLoadTime * (1 - totalValue / 100f);

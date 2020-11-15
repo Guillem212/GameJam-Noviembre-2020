@@ -6,18 +6,10 @@
             "id": "dccbea12-92b8-4634-b50c-34ef8350d41a",
             "actions": [
                 {
-                    "name": "Accept",
-                    "type": "Button",
-                    "id": "16eb9c05-de3f-41e7-945a-d530c54a453a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Decline",
-                    "type": "Button",
-                    "id": "875f0ad9-ef8f-4569-9911-3f8006f89773",
-                    "expectedControlType": "Button",
+                    "name": "MoveMenu",
+                    "type": "Value",
+                    "id": "44b1bf58-c978-4b34-ab37-acd9de0a9da3",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
                 },
@@ -33,34 +25,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "34d66e1f-b286-43a3-8f8e-88c3c2822436",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Accept",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8c44b9a0-dc7c-4dd7-baef-8cd3264557c0",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Decline",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "43461d85-21c5-4e86-a36b-1ddb0d01a6b4",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "SelectColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c369135b-70b4-49ba-b3c9-1da2ec37fa88",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -87,7 +68,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "HookLoad",
+                    "name": "HookPress",
                     "type": "Button",
                     "id": "0e438d08-6749-41d3-a21f-271f060934a0",
                     "expectedControlType": "Button",
@@ -98,6 +79,22 @@
                     "name": "HookRelease",
                     "type": "Button",
                     "id": "4cf8ce89-8e2d-41cd-b47d-277c01797741",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
+                },
+                {
+                    "name": "DashPress",
+                    "type": "Button",
+                    "id": "323b416f-3198-4bc2-a6cc-6ddb16fa27c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "DashRelease",
+                    "type": "Button",
+                    "id": "bab78e4f-516f-4cee-8c9b-499620b173e5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=1)"
@@ -133,7 +130,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HookLoad",
+                    "action": "HookPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -145,6 +142,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "HookRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c8db11d-dcb4-4e9c-9a7c-0d3f48c549a2",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "515f390a-3ee0-4de0-9f63-8d4a893fe0f3",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
