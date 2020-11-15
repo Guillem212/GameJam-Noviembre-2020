@@ -7,6 +7,7 @@ public class CardPlayer : MonoBehaviour
 {
     public Play play;
     public List<Upgrade> m_Deck;
+    public Upgrade m_stole;
     public List<Play> m_playAgainstMe;
 
 
@@ -77,6 +78,7 @@ public class CardPlayer : MonoBehaviour
     /// </summary>
     public void f_LaunchPlay()
     {
+        m_stole = null;
         if(m_EnemyIndex == -1 || m_action == CardAction.none)
         {
             int r = Random.Range(0, m_Deck.Count);
