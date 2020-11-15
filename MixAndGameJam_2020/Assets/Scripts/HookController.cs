@@ -12,6 +12,7 @@ public class HookController : MonoBehaviour
 
     public bool prepared;
     bool pressed;
+    public bool isLoading;
     Robot robot;
     public Hook hook;
     public GameObject arrow;
@@ -21,7 +22,9 @@ public class HookController : MonoBehaviour
     {
         robot = GetComponent<Robot>();
         cable = GetComponent<LineRenderer>();
+        cable.enabled = true;
         prepared = true;
+        isLoading = false;
     }
 
     private void Update()
@@ -29,29 +32,34 @@ public class HookController : MonoBehaviour
         cable.SetPosition(0, transform.position);
         cable.SetPosition(1, hook.transform.position);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, hook.transform.position, out hit))
+        Vector3 cableDirection = hook.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, cableDirection, out hit, cableDirection.magnitude))
         {
-            print("ojo que está tocando");
             Hook h = hit.transform.GetComponent<Hook>();
-            if (h && h.robot != robot)
+            if (h && h.robot != robot && robot.hook.cable.enabled)
             {
                 Drop();
             }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, hook.transform.position - transform.position);
         }
     }
 
     public void Drop()
     {
         print("DROP");
+        hook.transform.SetParent(null);
         Tween.Stop(hook.GetInstanceID());
         cable.enabled = false;
-        Vector3 target =  new Vector3(hook.transform.position.x + Random.value, 0, hook.transform.position.y + Random.value);
+        Vector3 target =  new Vector3(hook.transform.position.x + Random.value, 0, hook.transform.position.z + Random.value).normalized /2f;
         Tween.Position(hook.transform, target, 0.2f, 0);
     }
 
     public void PickUp()
     {
-        cable.enabled = false;
+        cable.enabled = true;
         prepared = true;
         robot.AddUpgrade(hook.GetUpgrade());
         hook.transform.SetParent(transform);
@@ -73,10 +81,7 @@ public class HookController : MonoBehaviour
     public void Load()
     {
         pressed = true;
-        if (robot.hook.prepared)
-        {
-            StartCoroutine(AsyncLoad());
-        }
+        StartCoroutine(AsyncLoad());
     }
 
     public void Release()
@@ -89,10 +94,15 @@ public class HookController : MonoBehaviour
         float timeLoaded = 0;
         while (pressed)
         {
-            if(timeLoaded < robot.loadTime) timeLoaded += Time.deltaTime;
+            if (robot.hook.prepared)
+            {
+                isLoading = true;
+                if (timeLoaded < robot.loadTime) timeLoaded += Time.deltaTime;
+            }
             yield return null;
         }
-        Launch(timeLoaded / robot.loadTime);
+        isLoading = false;
+        if (timeLoaded > 0) Launch(timeLoaded / robot.loadTime);
     }
 
     public void Launch(float normalizedLoad)
