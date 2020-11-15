@@ -34,6 +34,18 @@ public class CardGame : MonoBehaviour
         {
             Play player_play = player.GetComponent<CardPlayer>().play;
             List<Play> plays_Against_player = player.GetComponent<CardPlayer>().m_playAgainstMe;
+            Stack<Play> plays_stealing_against = new Stack<Play>();
+            Upgrade Aux_up = new Upgrade();
+            Aux_up.value = -1;
+            Play lowest_play = new Play(null, Aux_up, CardAction.none, null);
+            for (int i = 0; i < plays_Against_player.Count; i++)
+            {
+                if (plays_Against_player[i].action == CardAction.steal)
+                {
+                    if(plays_Against_player[i] )
+                }
+            }
+
 
 
             foreach (Play play in plays_Against_player)
@@ -48,43 +60,31 @@ public class CardGame : MonoBehaviour
                         if (indexOfTheCardPlayed < 0)
                         {
                             //Destruimos la jugada y la carta de player_play.
-                            player.GetComponent<CardPlayer>().play = new Play(gameObject, null, CardAction.none, null);
                             player.GetComponent<CardPlayer>().m_Deck.Remove(player_play.card);
+                            player_play = new Play(gameObject, null, CardAction.none, null);
                         }
                         else if (indexOfTheCardPlayed == 0)
                         {
                             //Destruimos todas las cartas involucradas.
                             player.GetComponent<CardPlayer>().m_Deck.Remove(player_play.card);
+                            player_play = new Play(gameObject, null, CardAction.none, null);
                             player_play.chosenPlayer.GetComponent<CardPlayer>().m_Deck.Remove(play.card);
+                            player_play.chosenPlayer.GetComponent<CardPlayer>().play = new Play(gameObject, null, CardAction.none, null);
                         }
                         else
                         {
                             //Se destruye la carta que te ataca.
                             player_play.chosenPlayer.GetComponent<CardPlayer>().m_Deck.Remove(play.card);
+                            player_play.chosenPlayer.GetComponent<CardPlayer>().play = new Play(gameObject, null, CardAction.none, null);
                         }
                     }
                     else if(player_play.action == CardAction.attack)
                     {
+                        //Se destruyen ambas cartas
                         player.GetComponent<CardPlayer>().m_Deck.Remove(player_play.card);
+                        player_play = new Play(gameObject, null, CardAction.none, null);
                         player_play.chosenPlayer.GetComponent<CardPlayer>().m_Deck.Remove(play.card);
-                        /* indexOfTheCardPlayed -= play.card.value;
-
-                         if (indexOfTheCardPlayed < 0)
-                         {
-                             //Destruimos la jugada y la carta de player_play.
-                             player_play.chosenPlayer.GetComponent<CardPlayer>().m_Deck.Remove(play.card);
-                         }
-                         else if (indexOfTheCardPlayed == 0)
-                         {
-                             //Destruimos todas las cartas involucradas.
-                             player.GetComponent<CardPlayer>().m_Deck.Remove(player_play.card);
-                             player_play.chosenPlayer.GetComponent<CardPlayer>().m_Deck.Remove(play.card);
-                         }
-                         else
-                         {
-                             //Se destruyen todas las cartas involucradas.
-                         }
-                        */
+                        player_play.chosenPlayer.GetComponent<CardPlayer>().play = new Play(gameObject, null, CardAction.none, null);
                     }
                     else if(player_play.action == CardAction.steal)
                     {
