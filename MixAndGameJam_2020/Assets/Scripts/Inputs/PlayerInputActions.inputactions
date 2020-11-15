@@ -68,7 +68,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "HookLoad",
+                    "name": "HookPress",
                     "type": "Button",
                     "id": "0e438d08-6749-41d3-a21f-271f060934a0",
                     "expectedControlType": "Button",
@@ -79,6 +79,22 @@
                     "name": "HookRelease",
                     "type": "Button",
                     "id": "4cf8ce89-8e2d-41cd-b47d-277c01797741",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
+                },
+                {
+                    "name": "DashPress",
+                    "type": "Button",
+                    "id": "323b416f-3198-4bc2-a6cc-6ddb16fa27c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "DashRelease",
+                    "type": "Button",
+                    "id": "bab78e4f-516f-4cee-8c9b-499620b173e5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=1)"
@@ -114,7 +130,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HookLoad",
+                    "action": "HookPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -126,6 +142,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "HookRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c8db11d-dcb4-4e9c-9a7c-0d3f48c549a2",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "515f390a-3ee0-4de0-9f63-8d4a893fe0f3",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DashPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
