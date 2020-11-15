@@ -1192,5 +1192,9 @@ PrefabInstance:
       propertyPath: playerColors.Array.data[3].r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6117023893774804660, guid: 999f2ca6a2c5ad34e91a99335cba2f11, type: 3}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 6150255432192052514, guid: 8e718393c349519449cef041b5d78081, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 999f2ca6a2c5ad34e91a99335cba2f11, type: 3}
