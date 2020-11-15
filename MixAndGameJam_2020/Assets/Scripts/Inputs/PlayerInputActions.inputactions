@@ -151,7 +151,7 @@
             ]
         },
         {
-            "name": "CardsGame",
+            "name": "CardsSelected",
             "id": "21306eb9-a8ed-446a-a796-df9ffac2f445",
             "actions": [
                 {
@@ -182,38 +182,6 @@
                     "name": "Steal",
                     "type": "Button",
                     "id": "e4fad362-d314-4cbc-8a67-b861d5944921",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttackPlayerX",
-                    "type": "Button",
-                    "id": "3b3058d8-09e3-4e3f-b7cc-fedb00d371dc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttackPlayerA",
-                    "type": "Button",
-                    "id": "d92f5ef5-2d54-47ce-b6bb-edcee25f101b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttackPlayerB",
-                    "type": "Button",
-                    "id": "03796da2-f245-4759-a6fd-aeeaedf8e646",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttackPlayerY",
-                    "type": "Button",
-                    "id": "e2dbdd27-980a-46a0-b835-2946fc0cf4e7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -263,10 +231,50 @@
                     "action": "Steal",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "CardsPlay",
+            "id": "9c97bc10-e46f-47aa-91e4-bd0053f6a359",
+            "actions": [
+                {
+                    "name": "AttackPlayerX",
+                    "type": "Button",
+                    "id": "9a20fd69-0bc8-440f-a4ce-28a54b6131f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 },
                 {
+                    "name": "AttackPlayerA",
+                    "type": "Button",
+                    "id": "89873d50-2160-4e5a-8b7b-b879be9d3a5f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "AttackPlayerB",
+                    "type": "Button",
+                    "id": "6ebc0ed1-cf92-41e2-9087-4cc6df761eb7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "AttackPlayerY",
+                    "type": "Button",
+                    "id": "73fadc00-aff7-479a-92ab-a9d20d70ffbf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "2b90b670-a9f3-47be-9201-4ee32d6c649d",
+                    "id": "ecb76f15-4b03-44f8-96b2-59566583f32b",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
@@ -277,7 +285,7 @@
                 },
                 {
                     "name": "",
-                    "id": "043ee2fe-c180-4c5f-b2fa-9acfbcaece2b",
+                    "id": "2e7b404e-7a6f-460c-9669-3ecaa932e81c",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -288,7 +296,7 @@
                 },
                 {
                     "name": "",
-                    "id": "f3a7dbad-edb1-42e7-8023-35da439e7a29",
+                    "id": "6274cdeb-7309-4bed-8cb9-df8c7fa7b958",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
@@ -299,7 +307,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c9e17be0-f3e7-4bec-ae61-13fb179c9863",
+                    "id": "edc56bb7-9c2f-44e9-8f39-7712f7d1c2e0",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",

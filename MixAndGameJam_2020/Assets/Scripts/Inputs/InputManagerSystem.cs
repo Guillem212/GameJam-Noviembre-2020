@@ -6,21 +6,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInputManager))]
 public class InputManagerSystem : MonoBehaviour
 {
-    public static InputManagerSystem m_InputManagerSystem;
     public List<PlayerInput> m_players;
 
-    private void Awake()
-    {
-        if(m_InputManagerSystem != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            m_InputManagerSystem = this;
-        }
-    }
     public void OnPlayerJoined(PlayerInput player)
     {
         m_players.Add(player);
@@ -28,7 +15,7 @@ public class InputManagerSystem : MonoBehaviour
     
     public void OnPlayerLeft(PlayerInput player)
     {
-        m_players.Remove(player);
+        //m_players.Remove(player);
     }
 
     /// <summary>

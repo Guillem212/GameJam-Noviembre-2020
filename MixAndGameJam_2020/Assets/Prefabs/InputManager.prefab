@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1454778451943471101}
   - component: {fileID: 3057060524358543985}
+  - component: {fileID: 363515523}
   m_Layer: 0
   m_Name: InputManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,8 +58,8 @@ MonoBehaviour:
     m_UseReference: 0
     m_Action:
       m_Name: Join
-      m_Type: 0
-      m_ExpectedControlType: 
+      m_Type: 1
+      m_ExpectedControlType: Button
       m_Id: 8717613b-cc3b-47cb-b6cf-ee2fd91bfdb2
       m_Processors: 
       m_Interactions: 
@@ -72,7 +73,7 @@ MonoBehaviour:
         m_Action: Join
         m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 0}
+  m_PlayerPrefab: {fileID: 2159468900015177378, guid: 8e718393c349519449cef041b5d78081, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -82,3 +83,16 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &363515523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088547561956961409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f9903a5bde59646b1b3dfb335a1e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_players: []
