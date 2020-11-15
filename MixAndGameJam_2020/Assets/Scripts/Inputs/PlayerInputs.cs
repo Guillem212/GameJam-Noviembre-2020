@@ -33,7 +33,7 @@ public class PlayerInputs : MonoBehaviour
         robot.hook.Target(value.Get<Vector2>());
     }
 
-    public void OnHookLoad(InputValue value)
+    public void OnHookPress(InputValue value)
     {
         robot.hook.Load();
     }
@@ -42,6 +42,17 @@ public class PlayerInputs : MonoBehaviour
     {
         robot.hook.Release();
     }
+
+    public void OnDashPress(InputValue value)
+    {
+        robot.propeller.Dash();
+    }
+
+    public void OnDashRelease(InputValue value)
+    {
+        robot.propeller.Release();
+    }
+
 
     //---------------------------------------------------------
     //INPUTS CARD GAME

@@ -14,4 +14,10 @@ public class MainMenuBehaviour : MonoBehaviour
 
         GameManager.m_GameManager.GetComponent<PlayerInputManager>().EnableJoining();
     }
+
+    private void Start()
+    {
+        GameManager.m_GameManager.GetComponent<PlayerInputManager>().EnableJoining();
+
+    }
 }

@@ -10,15 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 127952749141205909}
   - component: {fileID: 5909100749327904350}
+  - component: {fileID: 6736175305475327801}
   - component: {fileID: 6088306389297366902}
   - component: {fileID: 4118809429811263487}
-  - component: {fileID: 6457523562356448661}
   - component: {fileID: 406648393051240314}
   - component: {fileID: 7386436697805632554}
   - component: {fileID: 7653734346013316189}
   - component: {fileID: -6325870219839849672}
   - component: {fileID: 6096044522885577167}
-  - component: {fileID: 6736175305475327801}
+  - component: {fileID: 6457523562356448661}
   - component: {fileID: 2851157311169815542}
   m_Layer: 0
   m_Name: Player
@@ -50,6 +50,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159468900015177378}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6736175305475327801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159468900015177378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d577badf575a63345978ecccb3d71a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 6096044522885577167}
+  propeller: {fileID: 6457523562356448661}
+  inputs: {fileID: 7386436697805632554}
+  bSpeed: 3.5
+  bLoadTime: 1
+  bLaunchForce: 1
+  bMaxFuel: 0.3
+  bDashForce: 12
+  speed: 0
+  loadTime: 0
+  launchForce: 0
+  maxFuel: 0
+  dashForce: 0
 --- !u!23 &6088306389297366902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105,45 +130,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6457523562356448661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2159468900015177378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4a1653840aa9b4db2d67b3539f83a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 3.290881
-      outSlope: 3.290881
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.03010033
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  timePressed: 0
-  refillDuration: 0
 --- !u!114 &406648393051240314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slow: 0.216
-  dash: 0
+  dashSlow: 1
 --- !u!143 &-6325870219839849672
 CharacterController:
   m_ObjectHideFlags: 0
@@ -335,7 +321,7 @@ MonoBehaviour:
   hook: {fileID: 6080952965974545993}
   arrow: {fileID: 4434236805063504232}
   cable: {fileID: 0}
---- !u!114 &6736175305475327801
+--- !u!114 &6457523562356448661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,21 +330,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 2159468900015177378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d577badf575a63345978ecccb3d71a51, type: 3}
+  m_Script: {fileID: 11500000, guid: cc4a1653840aa9b4db2d67b3539f83a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hook: {fileID: 6096044522885577167}
-  inputs: {fileID: 7386436697805632554}
-  bSpeed: 3.5
-  bLoadTime: 1
-  bLaunchForce: 1
-  bMaxFuel: 0
-  bDashForce: 0
-  speed: 0
-  loadTime: 0
-  launchForce: 0
-  maxFuel: 0
-  dashForce: 0
+  dashSpeed: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  timePressed: 0
+  refillDuration: 1.534
 --- !u!120 &2851157311169815542
 LineRenderer:
   m_ObjectHideFlags: 0
