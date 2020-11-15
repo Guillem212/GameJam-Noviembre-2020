@@ -45,48 +45,43 @@ public class AudioManager : MonoBehaviour
 
     public void f_HitOnOtherHookDirectly()
     {
-
+        Play("hookImpact");
     }
 
     public void f_CutPlayerHook()
     {
+        Play("hookCut");
+    }
 
-    }    
+    public void f_HitOnOtherPlayer()
+    {
+        Play("hookImpact");
+        Play("itemPickup");
+    }
 
     public void f_HookShoot()
     {
-
+        StartCoroutine(ShootHook());
     }
 
     public void f_HookShootLimitReached()
     {
-
-    }
-
-    public void f_PlayerKilled()
-    {
-
+        Stop("hookLoop");
+        Play("hookRetracting");
     }
 
     public void f_PickUpHook()
     {
-
+        Play("hookPickup");
     }
 
-    public void f_PickUpCard()
+    IEnumerator ShootHook()
     {
-
+        Play("hookShoot");
+        yield return new WaitForSeconds(0.2f);
+        Play("hookLoop");
     }
-
-    public void f_TimeOut()
-    {
-
-    }
-
-    public void f_PlayCards()
-    {
-
-    }      
+    
 
     /// <summary>
     /// Applies to a sound a certain volume in a smooth way due to a lerp factor amount
@@ -111,6 +106,7 @@ public class AudioManager : MonoBehaviour
         }
         yield return null;
     }
+
 
     /// <summary>
     /// Reproduces a sound each "Random" time
