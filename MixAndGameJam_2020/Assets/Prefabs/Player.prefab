@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5909100749327904350}
   - component: {fileID: 6088306389297366902}
   - component: {fileID: 4118809429811263487}
+  - component: {fileID: 6457523562356448661}
   - component: {fileID: 406648393051240314}
   - component: {fileID: 7386436697805632554}
   - component: {fileID: 7653734346013316189}
@@ -104,6 +105,44 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6457523562356448661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159468900015177378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4a1653840aa9b4db2d67b3539f83a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDashing: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.290881
+      outSlope: 3.290881
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.03010033
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  refillDuration: 0
 --- !u!114 &406648393051240314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa1fd5618035a24f949d556b69e00f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerVelocity: 5
+  slow: 0.216
+  dash: 0
 --- !u!143 &-6325870219839849672
 CharacterController:
   m_ObjectHideFlags: 0
@@ -288,6 +328,7 @@ MonoBehaviour:
   maxRange: 8
   duration: 0.5
   prepared: 0
+  isLoading: 0
   hook: {fileID: 6080952965974545993}
   arrow: {fileID: 4434236805063504232}
   cable: {fileID: 0}
@@ -305,8 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 6096044522885577167}
   inputs: {fileID: 7386436697805632554}
-  bSpeed: 0
-  bLoadTime: 2
+  bSpeed: 3.5
+  bLoadTime: 1
   bLaunchForce: 1
   bMaxFuel: 0
   bDashForce: 0
@@ -322,7 +363,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159468900015177378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
