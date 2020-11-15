@@ -30,10 +30,10 @@ public class CameraBehaviour : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(m_PlayersTransforms.Count != InputManagerSystem.m_InputManagerSystem.m_players.Count)
+        if(m_PlayersTransforms.Count != GameManager.m_GameManager.m_InputManagerSystem.m_players.Count)
         {
             m_PlayersTransforms.Clear();
-            foreach (UnityEngine.InputSystem.PlayerInput players in InputManagerSystem.m_InputManagerSystem.m_players)
+            foreach (UnityEngine.InputSystem.PlayerInput players in GameManager.m_GameManager.m_InputManagerSystem.m_players)
             {
                 m_PlayersTransforms.Add(players.gameObject.transform);
             }

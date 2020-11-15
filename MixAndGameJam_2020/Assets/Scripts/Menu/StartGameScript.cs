@@ -15,7 +15,7 @@ public class StartGameScript : MonoBehaviour
 
     private void Update()
     {
-        if(m_countPlayers >= InputManagerSystem.m_InputManagerSystem.m_players.Count && m_countPlayers != 0)
+        if(m_countPlayers >= GameManager.m_GameManager.m_InputManagerSystem.m_players.Count && m_countPlayers != 0)
         {
             StartCoroutine(StartPlaying(m_secondsToWait));
         }
