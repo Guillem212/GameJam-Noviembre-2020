@@ -57,7 +57,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 200
   field of view: 10
   orthographic: 1
   orthographic size: 6.76
@@ -98,5 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DampTime: 0.5
   m_SizeMargin: 5
-  m_MinSize: 5.01
-  m_DistanceToMap: 5.1
+  m_MinSize: 5
+  m_DistanceToMap: 10
