@@ -113,6 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_players: []
+  playerColors:
+  - {r: 1, g: 0.4175257, b: 0, a: 1}
+  - {r: 0, g: 0.4333737, b: 1, a: 1}
+  - {r: 0.57115614, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.94689506, b: 0, a: 1}
 --- !u!114 &2075086183580404040
 MonoBehaviour:
   m_ObjectHideFlags: 0

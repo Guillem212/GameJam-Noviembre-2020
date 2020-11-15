@@ -35,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159468900015177378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8177054769640823831}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4a1653840aa9b4db2d67b3539f83a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDashing: 0
+  dashSpeed: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -142,6 +142,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  timePressed: 0
   refillDuration: 0
 --- !u!114 &406648393051240314
 MonoBehaviour:
@@ -262,7 +263,7 @@ MonoBehaviour:
     m_ActionName: CardsGame/AttackPlayerY[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 30bf5cf9-84b9-4367-b0d7-9895e37d58ce
+  m_DefaultActionMap: FightGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7386436697805632554
@@ -280,6 +281,8 @@ MonoBehaviour:
   m_LeftStick: {x: 0, y: 0}
   m_RightStick: {x: 0, y: 0}
   robot: {fileID: 6736175305475327801}
+  m_LeftStickMenu: {x: 0, y: 0}
+  m_RightStickColor: 0
 --- !u!114 &7653734346013316189
 MonoBehaviour:
   m_ObjectHideFlags: 0
