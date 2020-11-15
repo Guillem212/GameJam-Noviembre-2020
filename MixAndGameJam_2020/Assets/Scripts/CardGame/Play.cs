@@ -6,14 +6,14 @@ public enum CardAction { attack, defense, steal, none };
 public struct Play
 {
     public GameObject player;
-    public int value;
+    public Upgrade card;
     public CardAction action;
     public GameObject chosenPlayer;
 
-    public Play(GameObject player, int value, CardAction action, GameObject chosenPlayer)
+    public Play(GameObject player, Upgrade card, CardAction action, GameObject chosenPlayer)
     {
         this.player = player;
-        this.value = value;
+        this.card = card;
         this.action = action;
         this.chosenPlayer = chosenPlayer;
     }

@@ -223,7 +223,7 @@ MonoBehaviour:
     m_ActionName: CardsGame/AttackPlayerY[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: FightGame
+  m_DefaultActionMap: dccbea12-92b8-4634-b50c-34ef8350d41a
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7386436697805632554
