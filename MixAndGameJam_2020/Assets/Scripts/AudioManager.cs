@@ -45,42 +45,48 @@ public class AudioManager : MonoBehaviour
 
     public void f_HitOnOtherHookDirectly()
     {
-        Play("hookImpact");
+
     }
 
     public void f_CutPlayerHook()
     {
-        Play("hookCut");
-    }  
-    
-    public void f_HitOnOtherPlayer()
-    {
-        Play("hookImpact");
-        Play("itemPickup");
-    }
+
+    }    
 
     public void f_HookShoot()
     {
-        StartCoroutine(ShootHook());      
+
     }
 
     public void f_HookShootLimitReached()
     {
-        Stop("hookLoop");
-        Play("hookRetracting");
-    }    
+
+    }
+
+    public void f_PlayerKilled()
+    {
+
+    }
 
     public void f_PickUpHook()
     {
-        Play("hookPickup");
-    }              
 
-    IEnumerator ShootHook()
-    {
-        Play("hookShoot");
-        yield return new WaitForSeconds(0.2f);
-        Play("hookLoop");
     }
+
+    public void f_PickUpCard()
+    {
+
+    }
+
+    public void f_TimeOut()
+    {
+
+    }
+
+    public void f_PlayCards()
+    {
+
+    }      
 
     /// <summary>
     /// Applies to a sound a certain volume in a smooth way due to a lerp factor amount

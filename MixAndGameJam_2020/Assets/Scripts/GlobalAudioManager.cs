@@ -35,7 +35,7 @@ public class GlobalAudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = audioMixerMaster; //to control volume            
         }
-        //StartCoroutine(RandomNoises());        
+        //StartCoroutine(RandomNoises());
     }
 
     public void Play(string name)
@@ -53,28 +53,56 @@ public class GlobalAudioManager : MonoBehaviour
             return;
         s.source.Stop();
     }
-    
+
+    public void f_HitOnOtherHookDirectly()
+    {
+
+    }
+
+    public void f_CutPlayerHook()
+    {
+
+    }
+
+    public void f_HookShoot()
+    {
+
+    }
+
+    public void f_HookShootLimitReached()
+    {
+
+    }
 
     public void f_PlayerKilled()
     {
-        Play("playerEliminated");
+
     }
 
-    /// <summary>
-    /// Called each second when timeout counter between scenes appear
-    /// </summary>
+    public void f_PickUpHook()
+    {
+
+    }
+
+    public void f_PickUpCard()
+    {
+
+    }
+
     public void f_TimeOut()
     {
-        Play("timeOut");
+
     }
 
-    /// <summary>
-    /// Called when cards are played
-    /// </summary>
     public void f_PlayCards()
     {
-        Play("playCards");
-    }    
+
+    }
+
+    /*public void ReproduceFootsteps()
+    {
+        Play(m_footsteps[UnityEngine.Random.Range(0, 3)].name);        
+    } */
 
     /// <summary>
     /// Applies to a sound a certain volume in a smooth way due to a lerp factor amount
