@@ -34,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159468900015177378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8177054769640823831}
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_ActionName: CardsGame/AttackPlayerY[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: dccbea12-92b8-4634-b50c-34ef8350d41a
+  m_DefaultActionMap: 30bf5cf9-84b9-4367-b0d7-9895e37d58ce
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7386436697805632554

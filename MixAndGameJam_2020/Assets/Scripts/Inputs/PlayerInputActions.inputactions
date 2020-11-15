@@ -6,18 +6,10 @@
             "id": "dccbea12-92b8-4634-b50c-34ef8350d41a",
             "actions": [
                 {
-                    "name": "Accept",
-                    "type": "Button",
-                    "id": "16eb9c05-de3f-41e7-945a-d530c54a453a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Decline",
-                    "type": "Button",
-                    "id": "875f0ad9-ef8f-4569-9911-3f8006f89773",
-                    "expectedControlType": "Button",
+                    "name": "MoveMenu",
+                    "type": "Value",
+                    "id": "44b1bf58-c978-4b34-ab37-acd9de0a9da3",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
                 },
@@ -33,34 +25,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "34d66e1f-b286-43a3-8f8e-88c3c2822436",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Accept",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8c44b9a0-dc7c-4dd7-baef-8cd3264557c0",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Decline",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "43461d85-21c5-4e86-a36b-1ddb0d01a6b4",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "SelectColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c369135b-70b4-49ba-b3c9-1da2ec37fa88",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

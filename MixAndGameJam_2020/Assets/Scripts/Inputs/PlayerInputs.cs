@@ -85,16 +85,15 @@ public class PlayerInputs : MonoBehaviour
     //---------------------------------------------------------
     //INPUTS MENU
     //---------------------------------------------------------
+    public Vector2 m_LeftStickMenu;
+    public float m_RightStickColor;
     public void OnSelectColor(InputValue value)
     {
-
+        m_RightStickColor = value.Get<Vector2>().x;
     }
-    public void OnAccept(InputValue value)
-    {
 
-    }
-    public void OnDecline(InputValue value)
+    public void OnMoveMenu(InputValue value)
     {
-
+        m_LeftStickMenu = value.Get<Vector2>();
     }
 }
