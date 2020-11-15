@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
 
-
 [RequireComponent(typeof(CharacterController), typeof(PlayerInputs))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Robot robot;
 
     [Range(0, 1)] public float slow;
-    [Range(1, 2)] public float dash;
+    [Range(0, 1)] public float dashSlow;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +31,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void movePlayer()
     {
-        float speed = robot.hook.isLoading ? robot.speed * slow : robot.speed;
+        float propellerSpeed = robot.propeller.dashSpeed * robot.dashForce;
+        float speed = robot.speed;
+        if (robot.hook.isLoading)
+        {
+            speed *= slow;
+            propellerSpeed *= dashSlow;
+        }
+        speed += propellerSpeed;
         m_MoveDirection = new Vector3(m_Inputs.m_LeftStick.x, 0f, m_Inputs.m_LeftStick.y);
         m_MoveDirection = Camera.main.transform.TransformDirection(m_MoveDirection);
         m_MoveDirection.y = 0.0f;

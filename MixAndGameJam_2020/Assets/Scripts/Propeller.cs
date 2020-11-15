@@ -8,7 +8,7 @@ public class Propeller : MonoBehaviour
 
     private float fuel;
     public float dashSpeed;
-    bool pressed = false;
+    bool pressed;
     public AnimationCurve curve;
     public float timePressed;
     [Range(0, 5)] public float refillDuration;
@@ -18,6 +18,7 @@ public class Propeller : MonoBehaviour
     {
         robot = GetComponent<Robot>();
         fuel = robot.maxFuel;
+        pressed = false;
     }
 
     private void Update()
@@ -30,13 +31,19 @@ public class Propeller : MonoBehaviour
                 fuel = Mathf.Max(0, fuel - Time.deltaTime);
                 dashSpeed = curve.Evaluate(Mathf.Min(timePressed, robot.bMaxFuel));
             }
+            else
+            {
+                timePressed = 0;
+                dashSpeed = 0;
+            }
         }
         else
         {
+            timePressed = 0;
             dashSpeed = 0;
-            if (fuel < 0)
+            if (fuel < robot.maxFuel)
             {
-                fuel = Mathf.Min(robot.maxFuel, fuel + Time.deltaTime / refillDuration);
+                fuel = Mathf.Min(robot.maxFuel, fuel + robot.maxFuel * (Time.deltaTime / refillDuration));
             }
         }
     }
@@ -49,10 +56,5 @@ public class Propeller : MonoBehaviour
     public void Release()
     {
         pressed = false;
-    }
-
-    private float WValue(float minValue, float maxValue, float normalized)
-    {
-        return minValue + ((maxValue - minValue) * normalized);
     }
 }

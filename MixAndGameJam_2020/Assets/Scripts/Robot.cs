@@ -9,6 +9,7 @@ public class Robot : MonoBehaviour
 
     public List<Upgrade> inventory;
     public HookController hook;
+    public Propeller propeller;
     public PlayerInputs inputs;
    
     [Header("Base Stats")]
@@ -16,7 +17,7 @@ public class Robot : MonoBehaviour
     [Range(0, 2)] public float bLoadTime;
     [Range(0, 2)] public float bLaunchForce;
     [Range(0, 1)] public float bMaxFuel;
-    [Range(0, 2)] public float bDashForce;
+    [Range(0, 100)] public float bDashForce;
 
     [Header("Final Stats")]
     public float speed;
