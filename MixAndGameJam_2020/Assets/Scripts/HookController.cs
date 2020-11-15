@@ -16,6 +16,7 @@ public class HookController : MonoBehaviour
     Robot robot;
     public Hook hook;
     public GameObject arrow;
+    public GameObject rotatingBody;
     public LineRenderer cable;
 
     public void Start()
@@ -75,6 +76,7 @@ public class HookController : MonoBehaviour
             direction.y = 0f;
             direction.Normalize();
             arrow.transform.position = transform.position + direction;
+            rotatingBody.transform.rotation = Quaternion.LookRotation(rotatingBody.transform.forward, -direction);
         }
     }
 
@@ -111,6 +113,7 @@ public class HookController : MonoBehaviour
         hook.transform.SetParent(null);
         Vector3 targetPosition = transform.position + direction * WValue(minRange, maxRange, normalizedLoad) * robot.launchForce;
         Tween.Position(hook.transform, targetPosition, duration, 0, null, Tween.LoopType.None, null, Return);
+        robot.animScript.f_Shoot();
     }
 
     private float WValue(float minValue, float maxValue, float normalized)
