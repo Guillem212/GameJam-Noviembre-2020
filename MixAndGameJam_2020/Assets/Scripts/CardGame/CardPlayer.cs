@@ -19,11 +19,7 @@ public class CardPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        //m_Deck = GetComponent<Robot>().inventory;
-        m_Deck.Add(new Upgrade());
-        m_Deck.Add(new Upgrade());
-        m_Deck.Add(new Upgrade());
-        m_Deck.Add(new Upgrade());
+        m_Deck = GetComponent<Robot>().inventory;
         m_CardIndex = 0;
         m_EnemyIndex = -1;
         m_action = CardAction.none;
