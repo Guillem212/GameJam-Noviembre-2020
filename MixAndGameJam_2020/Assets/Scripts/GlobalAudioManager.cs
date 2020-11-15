@@ -54,49 +54,25 @@ public class GlobalAudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    public void f_HitOnOtherHookDirectly()
-    {
-
-    }
-
-    public void f_CutPlayerHook()
-    {
-
-    }
-
-    public void f_HookShoot()
-    {
-
-    }
-
-    public void f_HookShootLimitReached()
-    {
-
-    }
-
     public void f_PlayerKilled()
     {
-
+        Play("playerEliminated");
     }
 
-    public void f_PickUpHook()
-    {
-
-    }
-
-    public void f_PickUpCard()
-    {
-
-    }
-
+    /// <summary>
+    /// Called each second when timeout counter between scenes appear
+    /// </summary>
     public void f_TimeOut()
     {
-
+        Play("timeOut");
     }
 
+    /// <summary>
+    /// Called when cards are played
+    /// </summary>
     public void f_PlayCards()
     {
-
+        Play("playCards");
     }
 
     /*public void ReproduceFootsteps()
