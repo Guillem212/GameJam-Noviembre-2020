@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (transform.position.y < 1f || transform.position.y > 1f)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 1f, transform.position.z), Time.deltaTime * m_PlayerVelocity);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 1f, transform.position.z), Time.deltaTime * m_PlayerVelocity * 2f);
         }
     }
 
