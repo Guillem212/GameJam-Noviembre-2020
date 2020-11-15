@@ -14,6 +14,7 @@ public class CardGame : MonoBehaviour
     void Start()
     {
         m_players = GameObject.FindGameObjectsWithTag("Player");
+        m_jackpotValue = 0;
 
         GameManager.m_GameManager.m_InputManagerSystem.f_SetCurrentActionMap("CardsSelected");
         StartCoroutine(startFight(TIME));
@@ -31,6 +32,7 @@ public class CardGame : MonoBehaviour
 
     private void f_ConcludePlay()
     {
+        m_jackpotValue = 0;
         foreach (GameObject player in m_players)
         {
             Play player_play = player.GetComponent<CardPlayer>().play;
