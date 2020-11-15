@@ -484,6 +484,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2088547561956961409, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3057060524358543985, guid: 2adeef936a4c6d245b7eea3fe9242140, type: 3}
       propertyPath: m_SplitScreen
       value: 0
