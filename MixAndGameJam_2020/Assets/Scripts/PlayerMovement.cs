@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 m_MoveDirection;
     private Robot robot;
 
+    public GameObject m_RobotBase;
+
     [Range(0, 1)] public float slow;
     [Range(0, 1)] public float dashSlow;
 
@@ -20,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
         robot = GetComponent<Robot>();
         m_Inputs = GetComponent<PlayerInputs>();
         m_Controller = GetComponent<CharacterController>();
-        Tween.Position(transform, new Vector3(transform.position.x, 1f, transform.position.z), .3f, 0f);
     }
 
     // Update is called once per frame
@@ -43,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
         m_MoveDirection = Camera.main.transform.TransformDirection(m_MoveDirection);
         m_MoveDirection.y = 0.0f;
         m_MoveDirection.Normalize();
+        m_RobotBase.transform.rotation = Quaternion.LookRotation(m_RobotBase.transform.forward, -m_MoveDirection);
+        if (!m_Controller.isGrounded) m_MoveDirection.y = -10f;
+        else m_MoveDirection.y = 0f;
         m_Controller.Move(m_MoveDirection * Time.deltaTime * speed);
     }
 

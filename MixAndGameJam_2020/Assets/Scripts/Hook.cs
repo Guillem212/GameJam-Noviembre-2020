@@ -25,6 +25,8 @@ public class Hook : MonoBehaviour
                 {
                     upgrade = r.StealUpgrade();
                     robot.hook.Return();
+                    robot.animScript.f_HitAPlayer();
+                    r.animScript.f_HitByAPlayer();
                 }
                 else
                 {

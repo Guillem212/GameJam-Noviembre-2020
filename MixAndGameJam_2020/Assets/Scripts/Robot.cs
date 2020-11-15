@@ -11,7 +11,8 @@ public class Robot : MonoBehaviour
     public HookController hook;
     public Propeller propeller;
     public PlayerInputs inputs;
-   
+    public AnimatorScript animScript;
+
     [Header("Base Stats")]
     [Range(0,10)] public float bSpeed;
     [Range(0, 2)] public float bLoadTime;
