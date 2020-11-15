@@ -12,6 +12,6 @@ public class MainMenuBehaviour : MonoBehaviour
         //TODO: Animacion de fade out del menu.
         c_MainMenu.SetActive(false);
 
-        InputManagerSystem.m_InputManagerSystem.GetComponent<PlayerInputManager>().EnableJoining();
+        GameManager.m_GameManager.GetComponent<PlayerInputManager>().EnableJoining();
     }
 }

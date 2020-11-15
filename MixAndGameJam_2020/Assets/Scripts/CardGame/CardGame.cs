@@ -14,7 +14,7 @@ public class CardGame : MonoBehaviour
     {
         m_players = GameObject.FindGameObjectsWithTag("Player");
 
-        InputManagerSystem.m_InputManagerSystem.f_SetCurrentActionMap("CardsSelected");
+        GameManager.m_GameManager.m_InputManagerSystem.f_SetCurrentActionMap("CardsSelected");
         StartCoroutine(startFight(TIME));
     }
 
